@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Base = ({addBase, pizza}) => {
 //FIXME:TODO:-1
@@ -21,11 +22,15 @@ const Base = ({addBase, pizza}) => {
             //TODO:FIXME:
             {
                 pizza.base && (
-                    <div className="next">
+                    <motion.div
+                    initial={{ x: "-100vw" }}
+                    animate={{ x: 0 }}
+                    className="next"
+                    >
                         <Link to="/toppings">
                             <button>Next</button>
                         </Link>
-                    </div>
+                    </motion.div>
                 )
             }
         </div>

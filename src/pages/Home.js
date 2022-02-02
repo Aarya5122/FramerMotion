@@ -4,9 +4,11 @@ import { motion } from "framer-motion"
 
 const buttonVariants = {
     hover:{
-        scale: [1, 1.1, 1, 1.1, 1, 1.1, 1], //keyframe
+        // scale: [1, 1.1, 1, 1.1, 1, 1.1, 1], //#keyframe No transition
+        scale: 1.1,
         textShadow: "0px 0px 8px rgb(255, 255, 255)",
-        boxShadow: "0px 0px 8px rgb(255, 255, 255)"
+        boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+        transition: { yoyo: Infinity, duration: 0.3 }
     }
 }
 
@@ -22,8 +24,8 @@ const Home = () => {
             <Link to="/base">
                 <motion.button
                 variants={buttonVariants}
-                animate="visible"
-//                whileHover="hover"
+                // animate="visible"
+               whileHover="hover"
                 >
                      Create Your Pizza
                 </motion.button>

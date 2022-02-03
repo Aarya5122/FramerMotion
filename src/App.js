@@ -36,12 +36,12 @@ const App =() => {
     <>
     <Header/>
     <Modal showModal={showModal} setShowModal={setShowModal}/>
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence exitBeforeEnter onExitComplete={() => setShowModal(false)}>
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Home/>}/>
           <Route path="/base" element={<Base addBase={addBase} pizza={pizza}/>}/>
           <Route path="/toppings" element={<Toppings addTopping={addTopping} pizza={pizza}/>}/>
-          <Route path="/order" element={<Order pizza={pizza} setShowModal={setShowModal}/>}/>
+          <Route path="/order" element={<Order pizza={pizza}/>}/>
           <Route path="*" element={<PageNotFound/>}/>
         </Routes>
       </AnimatePresence>

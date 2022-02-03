@@ -16,7 +16,10 @@ const containerVariants = {
             stiffness: 120
         }
     }, // animate property can be animate: {} and transition comes into it
-
+    exit:{
+        x: "-100vw",
+        transition:{ ease: "easeInOut" }
+    }
 }
 
 const nextVariants = {
@@ -52,6 +55,7 @@ const Base = ({addBase, pizza}) => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
+        exit="exit"
         // transition={{ type: "spring", delay: 0.5, stiffness: 120 }}
         className="base container"
         >
